@@ -1,6 +1,7 @@
 // function Todos(props) {
 
 import Todo from "../models/todo";
+import TodoItem from "./TodoItem";
 
 //props: { items: string[]} => props is an object, with the items key, which itself holds an array of strings
 const Todos: React.FC<{ items: Todo[] }> = (props) => {
@@ -12,7 +13,7 @@ const Todos: React.FC<{ items: Todo[] }> = (props) => {
   return (
     <ul>
       {props.items.map((item) => (
-        <li key={item.id}>{item.text}</li>
+        <TodoItem key={item.id} text={item.text} />
       ))}
     </ul>
   );
