@@ -2,6 +2,7 @@
 
 import Todo from "../models/todo";
 import TodoItem from "./TodoItem";
+import classes from './Todos.module.css';
 
 //props: { items: string[]} => props is an object, with the items key, which itself holds an array of strings
 const Todos: React.FC<{ items: Todo[] }> = (props) => {
@@ -11,7 +12,7 @@ const Todos: React.FC<{ items: Todo[] }> = (props) => {
   //makes it clear that this acts as a Functional Component
   //will allow props to receive a children property
   return (
-    <ul>
+    <ul className={classes.todos}>
       {props.items.map((item) => (
         <TodoItem key={item.id} text={item.text} />
       ))}
