@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-const NewTodo = () => {
+const NewTodo: React.FC<{onAddTodo: (text: string) => void }> = (props) => {
   const todoTextInputRef = useRef<HTMLInputElement>(null);
   //We have to put null to create a startint value
 
@@ -14,6 +14,8 @@ const NewTodo = () => {
       //throw an error
       return;
     }
+
+    props.onAddTodo(enteredText);
   };
 
   return (
