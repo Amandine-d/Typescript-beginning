@@ -1,6 +1,9 @@
 // function Todos(props) {
+
+import Todo from "../models/todo";
+
 //props: { items: string[]} => props is an object, with the items key, which itself holds an array of strings
-const Todos: React.FC<{ items: string[] }> = (props) => {
+const Todos: React.FC<{ items: Todo[] }> = (props) => {
   //<> React.FC is already a generic type
   //we are using a generi type here, before we defined it
 
@@ -9,7 +12,7 @@ const Todos: React.FC<{ items: string[] }> = (props) => {
   return (
     <ul>
       {props.items.map((item) => (
-        <li key={item}>{item}</li>
+        <li key={item.id}>{item.text}</li>
       ))}
     </ul>
   );
